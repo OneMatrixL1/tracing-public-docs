@@ -19,7 +19,6 @@ flowchart LR
     D["<b>Kiểm toán · tên miền riêng</b><br/>Bản cổng do kiểm toán dựng lại<br/>Cùng mã nguồn, cùng mã băm bản dựng;<br/>người chơi mở cùng liên kết ở đây<br/>để so kết quả"]
     A -- "liên kết, dữ liệu sau #" --> B
     B <-- "chỉ đọc" --> C
-    A -. "cùng liên kết" .-> D
 ```
 
 *Luồng kiểm tra qua cổng VMatrix.*
