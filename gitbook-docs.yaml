@@ -1,5 +1,13 @@
-root: ./
+$schema: https://api.gitbook.com/gitbook-docs.yaml
 
-structure:
-  readme: README.md
-  summary: SUMMARY.md
+site:
+  title: Tracing SDK docs
+  structure:
+    - type: space
+      key: space-sdk-docs
+      title: Tracing SDK docs
+      path: docs
+      default: true
+      content:
+        directory: ./
+        language: en
