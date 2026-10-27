@@ -448,6 +448,9 @@ function batchRoot(ticketRoot, count, value) {
 To prove the batch came before the lock, check that the `Batched` log's block
 number is at or below the block whose hash is the drawRoot.
 
+For users, the [verification portal](portal.md) runs these checks in the
+browser from a link the client builds (proposal).
+
 ## Webhooks
 
 When an operator has registered a webhook endpoint for your client, the

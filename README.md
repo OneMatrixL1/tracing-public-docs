@@ -13,4 +13,7 @@ it receives.
 ### [Webhooks](reference/webhooks.md): 
   signed notifications when an anchor is mined or fails, and how to verify and answer them.
 
+## [Verification portal](integration/portal.md): 
+  the static page where users check an anchored ticket or record against the chain, and what a client provides for it (proposal).
+
 ### 
