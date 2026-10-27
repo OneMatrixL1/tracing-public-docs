@@ -2,10 +2,8 @@
 
 * [Introduction](README.md)
 
-## Plugins
+## Integration
 
-* [Tickets](plugins/tickets.md)
-
-## Reference
-
-* [Webhooks](reference/webhooks.md)
+* [Tickets](integration/tickets.md)
+  * [Numbering ticket batches](reference/batch-numbering.md)
+  * [Webhooks](reference/webhooks.md)

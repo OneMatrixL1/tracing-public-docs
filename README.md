@@ -4,12 +4,13 @@ Integration guides for clients of the tracing backend: what a client sends to
 the anchoring routes, what it gets back, what lands on chain, and the webhooks
 it receives.
 
-## Plugins
+## [Tickets](integration/tickets.md): 
+  anchor a lottery draw on chain (ticket batches, the lock, its timestamp, and the records that belong to the draw).
 
-- [Tickets](plugins/tickets.md): anchor a lottery draw on chain (ticket
-  batches, the lock, its timestamp, and the records that belong to the draw).
+### [Numbering ticket batches](reference/batch-numbering.md): 
+  how to set `sequence` on each ticket batch so a verifier can tell that no batch of a draw is missing.
 
-## Reference
+### [Webhooks](reference/webhooks.md): 
+  signed notifications when an anchor is mined or fails, and how to verify and answer them.
 
-- [Webhooks](reference/webhooks.md): signed notifications when an anchor is
-  mined or fails, and how to verify and answer them.
+### 
