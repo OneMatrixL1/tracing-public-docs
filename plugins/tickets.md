@@ -478,7 +478,7 @@ When an operator has registered a webhook endpoint for your client, the
 backend POSTs a signed JSON body when an anchor **ends**: `anchor.completed`
 once it is mined and succeeded, or `anchor.failed`. Signing, verification,
 the signed response, retries and setup are described in
-[WEBHOOKS.md](WEBHOOKS.md). This section only shows what the tickets types
+[Webhooks](../reference/webhooks.md). This section only shows what the tickets types
 put in `data`.
 
 ### Envelope
