@@ -33,7 +33,7 @@ implements is the [proposal](portal.md), sections 3.1 to 3.3.
 | Portal checks, link with `api` and `#id`, App API calls, evidence files | Running on staging |
 | App API | Specified here; staging uses a demo App API until the client's own is live |
 | Integrity API route for the portal (lookup by `ticketHeader`, no client key, CORS) | Proposal 3.3. Not yet on the tracing backend; staging uses a stand-in that reads the same index |
-| SDK links (`?type=batch&…#ticketId=…`) | Built by the .NET SDK. **Not accepted by the portal yet**; the format is being agreed (see [SDK links](#sdk-links-not-accepted-yet)) |
+| SDK links (`?type=batch&...#ticketId=...`) | Built by the .NET SDK. **Not accepted by the portal yet**; the format is being agreed (see [SDK links](#sdk-links-not-accepted-yet)) |
 | `timestamp` in `batchHeader` | Proposal 3.3. The tickets plugin does not accept the field yet |
 
 ## How a check runs
@@ -88,8 +88,8 @@ demo server. Send VMatrix:
 | `id` | `3D` | Your committer id. Every `getData` answer carries it as `metadata.committer` |
 | `name` | `3D` | Shown to users as the party that recorded the batch |
 | `appApi` | `https://api.example.com/portal/` | Your App API location. HTTPS, ends with `/` |
-| `registries` | `0x953d…1fd3` | Your anchoring contract(s), from `GET /api/contract` |
-| `accounts` | `0x…` | The accounts that send your anchoring transactions |
+| `registries` | `0x953d...1fd3` | Your anchoring contract(s), from `GET /api/contract` |
+| `accounts` | `0x...` | The accounts that send your anchoring transactions |
 | Issuer public key | P-256 point (65 bytes) or SPKI, hex | Verifies the signature on your tickets |
 
 The portal identifies who recorded a batch by the contract that emitted the
@@ -121,8 +121,8 @@ https://<portal>/v1/?api=<App API location>#id=<ticketId>
 The .NET SDK builds links of this form:
 
 ```
-https://<portal>/v1/?type=batch&draw=…&channel=…&sequence=…&ticketHash=0x…#ticketId=…
-https://<portal>/v1/?type=lock&draw=…&key=0x…
+https://<portal>/v1/?type=batch&draw=...&channel=...&sequence=...&ticketHash=0x...#ticketId=...
+https://<portal>/v1/?type=lock&draw=...&key=0x...
 ```
 
 The portal does not read these links yet. They carry no App API location, so
@@ -186,7 +186,7 @@ reports a mismatch if they differ. It shows this JSON to the user.
 |---|---|---|
 | Unknown `ticketId` | `404` | "Not found" |
 | `ticketId` expired or already used | `410` | "The link has expired, open it again from the app" |
-| Data deleted at the user's request or past its retention | `410` with `{"reason": "…"}` | "The original data is no longer kept"; the evidence file still works |
+| Data deleted at the user's request or past its retention | `410` with `{"reason": "..."}` | "The original data is no longer kept"; the evidence file still works |
 | Too many calls | `429` | "Try again later", with a retry button |
 | `5xx`, network error | | "The client is not responding", with a retry button |
 
@@ -222,7 +222,7 @@ Fields of the payload the portal reads:
 | `amount` | uint | Price |
 | `channel` | string | Sales channel; the batch carrying the ticket must use the same channel |
 
-Other fields (`issuedAt`, `partnerId`, `holder_commit`, …) are shown as they
+Other fields (`issuedAt`, `partnerId`, `holder_commit`, ...) are shown as they
 are.
 
 **TicketJSON** is the payload converted to JSON: strings, integers, arrays and
@@ -281,10 +281,10 @@ One ticket:
   "ticketJson": { "...": "the TicketJSON, for people reading the file" },
   "evidence": {
     "ticket": "<base64url of the COSE_Sign1 ticket>",
-    "anchor": { "tx": "0x…", "block": 4400000, "i": 2, "n": 5, "lh": "0x<leaf>", "p": ["0x…"] },
+    "anchor": { "tx": "0x...", "block": 4400000, "i": 2, "n": 5, "lh": "0x<leaf>", "p": ["0x..."] },
     "blocks": { "0": { "block": {} }, "4400000": { "block": {}, "receipts": [] } },
-    "lock": { "ltx": "0x…", "block": 4400010, "rootBlock": 4400008 },
-    "lockts": { "tx": "0x…", "block": 4400012 }
+    "lock": { "ltx": "0x...", "block": 4400010, "rootBlock": 4400008 },
+    "lockts": { "tx": "0x...", "block": 4400012 }
   }
 }
 ```
@@ -313,11 +313,11 @@ staging chain (84001) through the tracing backend:
 
 1. Open `https://3d-portal.vmatrix.vn/app/`, pick numbers and buy a demo
    ticket.
-2. Wait for the receipt to show "anchored in block #N", then tap
-   "Kiểm tra độc lập" (verify independently).
+2. Wait for the receipt to show that the ticket is anchored in block #N, then
+   tap the "verify independently" button.
 3. The portal opens with the demo App API and shows the result. In the app,
-   "Xuất biên nhận" (export receipt) saves the evidence file of one ticket;
-   after buying 10 tickets at once, "Xuất biên nhận cả đơn" saves the whole
-   order.
+   the "export receipt" button saves the evidence file of one ticket; after
+   buying 10 tickets at once, the "export the whole order" button saves the
+   order. (The demo app is in Vietnamese.)
 
 The demo App API follows this guide and can serve as a reference.
