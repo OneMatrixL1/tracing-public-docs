@@ -14,6 +14,6 @@ it receives.
   signed notifications when an anchor is mined or fails, and how to verify and answer them.
 
 ## [Verification portal](integration/portal.md): 
-  the static page where users check an anchored ticket or record against the chain, and what a client provides for it (proposal).
+  the static page where users check an anchored ticket or record against the chain, and what a client builds so that its users can verify tickets on it: the App API, the verification link, the ticket format and the evidence file.
 
 ### 
