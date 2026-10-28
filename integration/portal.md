@@ -9,8 +9,8 @@ wrong proof, makes the check fail; it cannot make it pass.
 
 This guide covers what a client (the party that commits tickets, for example
 3D) builds so that its users can verify their tickets: the App API, the
-verification link, the ticket format, and the evidence file. The design it
-implements is the [proposal](portal.md), sections 3.1 to 3.3.
+verification link, the ticket format, and the evidence file. It follows the
+VMatrix verification portal proposal, sections 3.1 to 3.3.
 
 ## Contents
 

@@ -8,4 +8,3 @@
   * [Numbering ticket batches](reference/batch-numbering.md)
   * [Webhooks](reference/webhooks.md)
 * [Verification portal](integration/portal.md)
-  * [Integration guide](integration/portal-guide.md)
